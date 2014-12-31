@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>List item:</strong>
+  <%= @list.list_item %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_list_path(@user, @list) %> |
+<%= link_to 'Back', user_lists_path %>

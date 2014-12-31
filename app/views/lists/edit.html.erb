@@ -1,0 +1,6 @@
+<h1>Editing list for <%= @user.first_name %> <%= @user.last_name %></h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', [@user, @list] %> |
+<%= link_to 'Back', user_lists_path(@user) %>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3685142401">
+    <data-source source="LOCAL" name="PostgreSQL - todos_development@127.0.0.1" uuid="d02e4b31-019d-4306-a9e6-935398155c49">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/todos_development</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
