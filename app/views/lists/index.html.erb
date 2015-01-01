@@ -10,14 +10,18 @@
   </thead>
 
   <tbody>
+    <% i=0 %>
     <% @lists.each do |list| %>
-      <tr>
-        <td><ol><li><%= list.list_item %></li></ol></td>
-        <td><%= link_to 'Show', [@user, list] %></td>
+    <% i+=1 %>
+       <tr>
+        <td><%= i %>.</td>
+        <td><%= list.list_item %></td>
         <td><%= link_to 'Edit', edit_user_list_path(@user, list) %></td>
         <td><%= link_to 'Destroy', [@user, list], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'My Items', user_list_items_path(@user, list) %></td>
       </tr>
     <% end %>
+
   </tbody>
 </table>
 

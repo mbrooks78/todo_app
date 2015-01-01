@@ -87,5 +87,5 @@ test:
 production:
   <<: *default
   database: todos_production
-  username: todos
-  password: <%= ENV['TODOS_DATABASE_PASSWORD'] %>
+  username: michael
+  password: mekoSkyla78

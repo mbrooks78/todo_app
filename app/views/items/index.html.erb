@@ -1,0 +1,28 @@
+<h1>Items for <%= @user.first_name %> <%= @user.last_name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item entry</th>
+      <th>List</th>
+      <th>Due date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.item_entry %></td>
+        <td><%= item.list_id %></td>
+        <td><%= item.due_date %></td>
+        <td><%= link_to 'Edit', edit_user_list_item_path(@user, @list, item) %></td>
+        <td><%= link_to 'Destroy', [@user, @list, item], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item', new_user_list_item_path(@user, @list) %>

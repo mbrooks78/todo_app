@@ -11,12 +11,12 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
-    @list = @user.lists.find(params[:id])
+    @list = List.find(params[:id])
   end
 
   # GET /lists/new
   def new
-    @user = User.find(params[:user_id])
+    #@user = User.find(params[:user_id])
     @list = @user.lists.build
     #@list = List.new
   end
@@ -46,7 +46,7 @@ class ListsController < ApplicationController
   # PATCH/PUT /lists/1
   # PATCH/PUT /lists/1.json
   def update
-    @list = @user.lists.find(params[:id])
+    #@list = List.find(params[:id])
     respond_to do |format|
       if @list.update(list_params)
         format.html { redirect_to user_lists_url(@user), notice: 'List was successfully updated.' }
@@ -64,7 +64,7 @@ class ListsController < ApplicationController
     @list = @user.lists.find(params[:id])
     @list.destroy
     respond_to do |format|
-      format.html { redirect_to user_lists_path(@user), notice: 'List was successfully destroyed.' }
+      format.html { redirect_to (user_lists_path(@user)), notice: 'List was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
