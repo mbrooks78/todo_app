@@ -4,9 +4,13 @@ Rails.application.routes.draw do
 
 
 
+
+
   resources :users do
     resources :lists do
-      resources :items
+      resources :items do
+        resources :filestores, only: [:index, :new, :create, :destroy]
+      end
     end
   end
 

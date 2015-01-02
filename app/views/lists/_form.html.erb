@@ -1,22 +1,32 @@
-<%= form_for([@user, @list]) do |f| %>
-  <% if @list.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h2>
+<%= form_for ([@user, @list]), :html => { :class => "form-horizontal list" } do |f| %>
 
-      <ul>
-      <% @list.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <% if @list.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @list.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :list_item %><br>
-    <%= f.text_field :list_item %>
+  <div class="control-group">
+    <%= f.label :list_item, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :list_item, :class => 'form-control' %>
+    </div>
+    <%= error_span(@list[:list_item]) %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            user_lists_path, :class => 'btn btn-default' %>
+
 <% end %>

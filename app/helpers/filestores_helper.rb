@@ -1,0 +1,2 @@
+module FilestoresHelper
+end

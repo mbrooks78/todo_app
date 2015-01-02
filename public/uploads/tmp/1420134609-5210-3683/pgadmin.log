@@ -1,0 +1,14 @@
+2014-12-30 21:19:05 ERROR  : Error connecting to the server: fe_sendauth: no password supplied
+
+2014-12-30 21:19:42 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "postgres"
+FATAL:  password authentication failed for user "postgres"
+
+2014-12-30 21:19:56 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "postgres"
+FATAL:  password authentication failed for user "postgres"
+
+2014-12-30 21:28:24 ERROR  : Error connecting to the server: FATAL:  password authentication failed for user "postgres"
+FATAL:  password authentication failed for user "postgres"
+
+2014-12-31 00:35:08 ERROR  : ERROR:  syntax error at or near "ON"
+LINE 2:   ON DATABASE todos_production
+          ^
