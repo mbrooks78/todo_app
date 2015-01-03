@@ -7,9 +7,6 @@
       <user-name>michael</user-name>
       <user-password>dfc7dfcfdfc1dfc5dff9dfc1dfd3dfc6dfcbdf9ddf92</user-password>
     </data-source>
-    <data-source name="Rails todos: production" uuid="c8ae9d3a-75ce-41e9-8045-fe0edeaaff36">
-      <user-name>michael</user-name>
-      <user-password>dfc7dfcfdfc1dfc5dff9dfc1dfd3dfc6dfcbdf9ddf92</user-password>
-    </data-source>
+    <data-source name="Rails todos: production" uuid="c8ae9d3a-75ce-41e9-8045-fe0edeaaff36" />
   </component>
 </project>
