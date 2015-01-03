@@ -25,7 +25,7 @@
   <div class="control-group">
     <%= f.label :due_date, :class => 'control-label' %>
     <div class="controls">
-      <%= f.datetime_select :due_date, :class => 'form-control' %>
+      <%= f.datetime_select :due_date, :ampm => true, :class => 'form-control' %>
 
     </div>
     <%= error_span(@item[:due_date]) %>
