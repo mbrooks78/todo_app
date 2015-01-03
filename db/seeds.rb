@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+account = Account.create! :email => 'mike@epichomeservices.com', :password => 'topsecret',
+                          :password_confirmation => 'topsecret', :first_name => 'Mike',
+                          :last_name => 'Brooks'
+
