@@ -3,7 +3,7 @@ class FilestoresController < ApplicationController
   before_action :get_user
   before_action :get_list
   before_action :get_item
-  #before_action :set_filestore
+
 
   def index
     @filestores = @item.filestores
@@ -11,14 +11,14 @@ class FilestoresController < ApplicationController
 
   def new
     @filestore = @item.filestores.build
-    #@filestore = @item.filestores.build
+
   end
 
   def create
     @filestore = @item.filestores.build(filestore_params)
 
     if @filestore.save
-      redirect_to user_list_item_filestores_path, notice: "The file #{@filestore.name} has been uploaded"
+      redirect_to account_list_item_filestores_path, notice: "The file #{@filestore.name} has been uploaded"
     else
       render 'new'
     end
@@ -29,7 +29,7 @@ class FilestoresController < ApplicationController
     @filestore = @item.filestores.find(params[:id])
     @filestore.destroy
     respond_to do |format|
-      format.html { redirect_to (user_list_item_filestores_path(@user, @list, @item)), notice: "The file #{@filestore.name} has been deleted." }
+      format.html { redirect_to (account_list_item_filestores_path(@user, @list, @item)), notice: "The file #{@filestore.name} has been deleted." }
     end
   end
 
@@ -43,7 +43,7 @@ class FilestoresController < ApplicationController
   end
 
   def get_user
-    @user = User.find(params[:user_id])
+    @user = Account.find(params[:account_id])
   end
 
   def get_list

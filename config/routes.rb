@@ -3,10 +3,12 @@ Rails.application.routes.draw do
 
 
 
+  root 'accounts#index'
 
 
+  devise_for :accounts, :path => "accounts",:path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register" }
 
-  resources :users do
+  resources :accounts do
     resources :lists do
       resources :items do
         resources :filestores, only: [:index, :new, :create, :destroy]
@@ -15,7 +17,7 @@ Rails.application.routes.draw do
   end
 
 
-  root 'users#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

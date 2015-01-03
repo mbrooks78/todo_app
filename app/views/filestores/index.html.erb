@@ -3,8 +3,9 @@
       <%= flash[:notice] %>
     </div>
 <% end %>
+<%= render 'layouts/navigation' %>
 <br/>
-<%= link_to "New File", new_user_list_item_filestore_path(@user, @item, @list), class: "btn btn-primary" %>
+<%= link_to "New File", new_account_list_item_filestore_path(@user, @item, @list), class: "btn btn-primary" %>
 <br/>
 <br/>
 <table class="table table-bordered table-striped">

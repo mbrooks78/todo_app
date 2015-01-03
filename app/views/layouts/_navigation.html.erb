@@ -1,4 +1,10 @@
-<ul class="nav">
-  <li><%= link_to 'Home', root_path %></li>
+<div class="nav">
+  <%= link_to 'Home', root_path %>
   <%= render 'layouts/navigation_links' %>
-</ul>
+  <% if current_account %>
+      <%= link_to 'Sign Out', destroy_account_session_path, :method => :delete %>
+  <% else %>
+      <%= link_to 'Register', new_account_registration_path %>
+      <%= link_to 'Sign In', new_account_session_path %>
+  <% end %>
+</div>

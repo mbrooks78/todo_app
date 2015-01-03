@@ -11,13 +11,13 @@
 
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_user_list_path(@user, list), :class => 'btn btn-default btn-xs' %>
+                      edit_account_list_path(@user, list), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       [@user,list],
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
-            <%= link_to t('.my items', :default => t("helpers.links.myitems")), user_list_items_path(@user, list), :class => 'btn btn-default btn-xs' %>
+            <%= link_to t('.my items', :default => t("helpers.links.myitems")), account_list_items_path(@user, list), :class => 'btn btn-default btn-xs' %>
         </td>
       </tr>
     <% end %>
@@ -25,5 +25,5 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_user_list_path,
+            new_account_list_path,
             :class => 'btn btn-primary' %>

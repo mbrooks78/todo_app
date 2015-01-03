@@ -3,6 +3,8 @@ class ItemsController < ApplicationController
   before_action :get_user
   before_action :get_list
 
+
+
   # GET /items
   # GET /items.json
   def index
@@ -32,7 +34,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to user_list_items_url, notice: 'Item was successfully created.' }
+        format.html { redirect_to account_list_items_url, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }
@@ -46,7 +48,7 @@ class ItemsController < ApplicationController
   def update
     respond_to do |format|
       if @item.update(item_params)
-        format.html { redirect_to user_list_items_url, notice: 'Item was successfully updated.' }
+        format.html { redirect_to account_list_items_url, notice: 'Item was successfully updated.' }
         format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit }
@@ -61,27 +63,34 @@ class ItemsController < ApplicationController
     @item = @list.items.find(params[:id])
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to (user_list_items_path(@user, @list)), notice: 'Item was successfully destroyed.' }
+      format.html { redirect_to (account_list_items_path(@user, @list)), notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
+  # helper_method :check_deadline
+
+
   private
 
-    def get_user
-      @user = User.find(params[:user_id])
-    end
+  def get_user
+    @user = Account.find(params[:account_id])
+  end
 
   def get_list
     @list = List.find(params[:list_id])
-  end
-    # Use callbacks to share common setup or constraints between actions.
-    def set_item
-      @item = Item.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def item_params
-      params.require(:item).permit(:item_entry, :list_id, :due_date)
-    end
+  end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def item_params
+    params.require(:item).permit(:item_entry, :list_id, :due_date)
+  end
+
+
 end
