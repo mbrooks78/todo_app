@@ -24,8 +24,7 @@ default: &default
 development:
   <<: *default
   database: todos_development
-  username: michael
-  password: mekoSkyla78
+
 
 
   # The specified database role being used to connect to postgres.
@@ -87,5 +86,4 @@ test:
 production:
   <<: *default
   database: todos_production
-  username: michael
-  password: mekoSkyla78
+
