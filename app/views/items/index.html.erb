@@ -8,13 +8,17 @@
     <th><%= model_class.human_attribute_name(:item_entry) %></th>
     <th><%= model_class.human_attribute_name(:due_date) %></th>
     <th><%= t '.actions', :default => t("helpers.actions") %></th>
+    <th></th>
+
+
   </tr>
   </thead>
   <tbody>
   <% @items.each do |item| %>
       <tr>
         <td><%= item.item_entry %>
-          <% if item[:due_date].to_i < (Time.now.to_i - 18000) %>
+          <% time_offset = Time.now.utc_offset %>
+          <% if (item[:due_date].to_i - time_offset) < Time.now.to_i  %>
             <td style="color:red"><%= item.due_date %> Past due</td>
         <% else %>
             <td><%= item.due_date %></td>

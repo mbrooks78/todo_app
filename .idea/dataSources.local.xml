@@ -7,15 +7,15 @@
     </data-source>
     <data-source name="Rails todos: development" uuid="6f38cc1c-40a4-45a8-878c-65b8a8b9ed08">
       <user-name>michael</user-name>
-      <user-password>dfc7dfcfdfc1dfc5dff9dfc1dfd3dfc6dfcbdf9ddf92</user-password>
+      <user-password>dfd2dfd2dfd2dfd2dfd2dfd2dfd2dfd2dfd2</user-password>
     </data-source>
     <data-source name="Rails todos: test" uuid="f5437755-4be8-4d74-8839-5a811784664d">
       <user-name>michael</user-name>
-      <user-password>dfc7dfcfdfc1dfc5dff9dfc1dfd3dfc6dfcbdf9ddf92</user-password>
+      <user-password>dfd2dfd2dfd2dfd2dfd2dfd2dfd2dfd2</user-password>
     </data-source>
     <data-source name="Rails todos: production" uuid="c8ae9d3a-75ce-41e9-8045-fe0edeaaff36">
       <user-name>michael</user-name>
-      <user-password>dfc7dfcfdfc1dfc5dff9dfc1dfd3dfc6dfcbdf9ddf92</user-password>
+      <user-password>dfd2dfd2dfd2dfd2dfd2dfd2dfd2</user-password>
     </data-source>
   </component>
 </project>
