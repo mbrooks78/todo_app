@@ -19,9 +19,9 @@
         <td><%= item.item_entry %>
           <% time_offset = Time.now.utc_offset %>
           <% if (item[:due_date].to_i - time_offset) < Time.now.to_i  %>
-            <td style="color:red"><%= item.due_date %> Past due</td>
+            <td style="color:red"><%= item.due_date.strftime("%d %b %Y %I:%M %p") %> Past due</td>
         <% else %>
-            <td><%= item.due_date %></td>
+            <td><%= item.due_date.strftime("%d %b %Y %I:%M %p") %></td>
         <% end %>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
